@@ -72,6 +72,11 @@ GEM_FILES := \
 	build/rubygem/MANIFEST \
 	$(foreach v, $(GEM_MANIFEST), $(addprefix build/rubygem/,$v))
 
+# make sure ur go path is in ur shell path
+ezpz:
+	@go install ./cmd/ecfg
+	@/Volumes/dev/ansible/get-ecfg-keys.sh
+
 ## Table of Contents ##########################################################
 default: all
 all:     deb man gem
